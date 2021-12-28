@@ -285,8 +285,8 @@ document.addEventListener('DOMContentLoaded', function() {
         "opens": "left"
     };
 
-    let combinedConfig = extend(daterangeConfig, appConfig.daterange);
-    console.log("DEBUG combinedConfig", combinedConfig);
+    // let combinedConfig = extend(daterangeConfig, appConfig.daterange);
+    // console.log("DEBUG combinedConfig", combinedConfig);
     jQuery.extend(daterangeConfig, appConfig.daterange);
 
 

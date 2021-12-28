@@ -4,16 +4,11 @@ FROM python:alpine3.15
 LABEL org.opencontainers.image.authors="rob@matesick.org>"
 
 # install dependencies
-#RUN apk update && apk add \
 RUN apk add --no-cache \
   bash \
   git \
-#  nodejs \
-#  npm \
   nginx \
   nginx-mod-http-lua
-#  python3 \
-#  py-pip
 
 RUN pip install speedtest-cli
 
