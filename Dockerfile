@@ -10,7 +10,7 @@ LABEL org.opencontainers.image.authors="rob@matesick.org>"
 #   nginx-mod-http-lua
 RUN \
   apt -y update && \
-  apt -y install git nginx libnginx-mod-http-lua && \
+  apt -y install cron git nginx libnginx-mod-http-lua && \
   rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache-dir speedtest-cli
