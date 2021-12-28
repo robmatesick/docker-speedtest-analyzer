@@ -1,5 +1,4 @@
-#FROM alpine:3.15
-FROM python:alpine3.15
+FROM python:slim
 
 LABEL org.opencontainers.image.authors="rob@matesick.org>"
 
