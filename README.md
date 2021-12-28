@@ -8,7 +8,7 @@ After that you can visit the web interface to view a hourly - time filterable re
 your internet connectivity speed.
 
 # Screenshot
-![Statistic Screenshot](https://github.com/robmatesick/docker-speedtest-analyzer/raw/master/screenshot_speedtest_analyzer_1.png?raw=true)
+![Statistic Screenshot](https://raw.githubusercontent.com/robmatesick/docker-speedtest-analyzer/main/screenshot_speedtest_analyzer_1.png)
 
 # Facts
 1. The speedtest runs hourly per default
