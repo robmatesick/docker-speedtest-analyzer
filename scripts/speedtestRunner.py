@@ -33,15 +33,15 @@ def runSpeedtest():
     for i in range(max(1, attempts)):
         try:
             s = Speedtest()
-        except ConfigRetrievalError:
-            print('attempt {} of {} failed to get config, trying again'.format(i + 1, attempts))
+        except ConfigRetrievalError as e:
+            print('attempt {} of {} failed to get config, trying again... ({})'.format(i + 1, attempts, str(e)))
             continue
         
         s.get_servers(servers)
         try:
             s.get_best_server()
-        except SpeedtestBestServerFailure:
-            print('attempt {} of {} failed to get best server, trying again'.format(i + 1, attempts))
+        except SpeedtestBestServerFailure as e:
+            print('attempt {} of {} failed to get best server, trying again... ({})'.format(i + 1, attempts, str(e)))
             continue
         
         s.download(threads=threads)
