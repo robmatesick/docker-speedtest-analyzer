@@ -12,4 +12,4 @@ services:
       - 8080:80
       - 8443:443
     environment:
-      - CRONJOB_ITERATION=15
+      - CRONJOB_ITERATION=5,20,35,50
