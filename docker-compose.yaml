@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  speedtest:
+    container_name: speedtest
+    image: rmaz410/sta
+    restart: unless-stopped
+    network_mode: bridge
+    volumes:
+      - ./data:/var/www/html/data
+    ports:
+      - 8080:80
+      - 8443:443
+    environment:
+      - CRONJOB_ITERATION=15
