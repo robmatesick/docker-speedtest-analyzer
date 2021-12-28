@@ -13,7 +13,9 @@ RUN \
   apt -y install cron git nginx libnginx-mod-http-lua && \
   rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir speedtest-cli
+RUN \
+  pip install --no-cache-dir --upgrade pip && \
+  pip install --no-cache-dir speedtest-cli
 
 # Remove default nginx web content
 RUN rm -R /var/www/*
