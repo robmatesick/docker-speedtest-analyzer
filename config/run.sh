@@ -12,7 +12,8 @@ fi
 crontab ${TMP_FILE}
 
 echo "Starting Cronjob"
-crond -l 2 -f &
+#crond -l 2 -f &
+service cron start
 
 echo "Starting nginx"
 exec nginx -g "daemon off;"
