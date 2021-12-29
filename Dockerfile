@@ -30,12 +30,12 @@ ADD config/vhost.conf /etc/nginx/http.d/default.conf
 ADD config/nginxEnv.conf /etc/nginx/modules/nginxEnv.conf
 
 # Install webroot files
-ADD . /var/www/html/
+ADD --chown=nginx:nginx . /var/www/html/
 
 EXPOSE 80
 EXPOSE 443
 
-RUN chown -R nginx:nginx /var/www/html/
+#RUN chown -R nginx:nginx /var/www/html/
 RUN chmod +x /var/www/html/config/run.sh
 RUN chmod 755 /var/www/html/scripts/speedtestRunner.py
 
