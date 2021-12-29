@@ -11,7 +11,7 @@ if [[ ${CRONJOB_ITERATION} && ${CRONJOB_ITERATION-x} ]]; then
 fi
 crontab ${TMP_FILE}
 
-echo "Starting Cronjob"
+echo "Starting crond"
 crond -l 2 -f &
 #service cron start
 

@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
     parseManager.parse();
 
     document.querySelector('#startSpeedtest').addEventListener('click', function () {
-        console.log('button clicked!')
+        // console.log('DEBUG: button clicked!')
         let buttonHelper = new ButtonHlpr(this);
 
         buttonHelper.loading();
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     return Promise.reject(error);
                 }
 
-                console.log('Response:', data);
+                // console.log('DEBUG: Response:', data);
                 buttonHelper.reset();
                 parseManager.flushChart(true, function(){
                     parseManager.parse();
@@ -339,23 +339,6 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => {
                 console.error('There was an error requesting a speedtest!', error);
             });
-
-        // const request = new XMLHttpRequest();
-        // request.open('GET', '/run_speedtest', true);
-        // request.onload = function (e) {
-        //     if (request.readyState === 4) {
-        //         // Check if the request was successful.
-        //         if (request.status === 200) {
-        //             console.log(request.responseText);
-        //             buttonHelper.reset();
-        //             parseManager.flushChart(true, function(){
-        //                 parseManager.parse();
-        //             });
-        //         } else {
-        //             console.error(request.statusText);
-        //         }
-        //     }
-        // };
 
     });  // end of button click
 
