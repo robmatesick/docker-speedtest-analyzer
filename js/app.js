@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
         parseManager.flushChart(true, function(){
             parseManager.parse();
         });
-    }, 900000);  // 15 minute interval
+    }, 60000);  // 1 minute interval
 
 
 });
