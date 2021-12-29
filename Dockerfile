@@ -3,15 +3,11 @@ FROM python:slim
 LABEL org.opencontainers.image.authors="rob@matesick.org>"
 
 # install dependencies
-# RUN apk add --no-cache \
-#   bash \
-#   git \
-#   nginx \
-#   nginx-mod-http-lua
-RUN \
-  apt -y update && \
-  apt -y install cron git nginx libnginx-mod-http-lua && \
-  rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache \
+  bash \
+  git \
+  nginx \
+  nginx-mod-http-lua
 
 RUN \
   pip install --no-cache-dir --upgrade pip && \
@@ -39,7 +35,7 @@ ADD . /var/www/html/
 EXPOSE 80
 EXPOSE 443
 
-#RUN chown -R nginx:nginx /var/www/html/
+RUN chown -R nginx:nginx /var/www/html/
 RUN chmod +x /var/www/html/config/run.sh
 RUN chmod 755 /var/www/html/scripts/speedtestRunner.py
 
