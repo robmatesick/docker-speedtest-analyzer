@@ -342,4 +342,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });  // end of button click
 
+    // Auto-refresh data on occasion
+    setTimeout(() => {
+        parseManager.flushChart(true, function(){
+            parseManager.parse();
+        });
+    }, 900000);  // 15 minute interval
+
+
 });
