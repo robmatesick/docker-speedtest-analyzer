@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         /**
          * Parse result.csv and create graph with _startDate and _endDate filter
          */
-        parseManager.parse = function(){
+        parseManager.parse = function() {
             let parseManager = this;
             parseManager.i = 0;
 
@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Auto-refresh data on occasion
     setTimeout(() => {
-        console.log('{}  INFO  Refreshing data...'.format(moment.format()));
+        console.log('{}  INFO  Refreshing data...'.format(moment().format()));
         parseManager.flushChart(true, function(){
             parseManager.parse();
         });
