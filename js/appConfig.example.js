@@ -6,7 +6,7 @@
  */
 let appConfig = {
   "customTitle": "Speed Statistics",
-  "dateFormat": "YYYY.MM.DD",
+  "dateFormat": "MM/DD/YYYY",
   "locale": "en",
   "labels": {
     "download": "Download",
