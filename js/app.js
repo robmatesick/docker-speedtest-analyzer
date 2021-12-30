@@ -355,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });  // end of button click
 
     // Auto-refresh data on occasion
-    setTimeout(() => {
+    setInterval(() => {
         refreshData();
     }, 60000);  // 1 minute interval
 
