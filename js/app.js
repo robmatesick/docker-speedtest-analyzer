@@ -1,3 +1,5 @@
+let parseManager;
+
 // Custom function for building buttons
 let ButtonHlpr = function(btn){
     let button = jQuery(btn);
@@ -25,6 +27,14 @@ const extend = function(out) {
     }
 
     return out;
+};
+
+// Fetch data from source, and refresh the chart...
+const refreshData = () => {
+    console.log(moment().format() + '  INFO  Refreshing data...');
+    parseManager.flushChart(true, function(){
+        parseManager.parse();
+    });
 };
 
 // Configuration
@@ -290,9 +300,11 @@ document.addEventListener('DOMContentLoaded', function() {
     jQuery.extend(daterangeConfig, appConfig.daterange);
 
 
+    //
     // Main action
+    //
 
-    let parseManager = new ParseManager();
+    parseManager = new ParseManager();
     parseManager.setChart(chartJS);
     
     // Note that Bootstrap DateRangePicker requires use of jQuery
@@ -344,10 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Auto-refresh data on occasion
     setTimeout(() => {
-        console.log(moment().format() + '  INFO  Refreshing data...');
-        parseManager.flushChart(true, function(){
-            parseManager.parse();
-        });
+        refreshData();
     }, 60000);  // 1 minute interval
 
 
