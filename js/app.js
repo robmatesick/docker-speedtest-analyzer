@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Auto-refresh data on occasion
     setTimeout(() => {
-        console.log('Refreshing data...');
+        console.log('{}  INFO  Refreshing data...'.format(moment.format()));
         parseManager.flushChart(true, function(){
             parseManager.parse();
         });
