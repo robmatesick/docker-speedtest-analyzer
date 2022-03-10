@@ -1,7 +1,7 @@
 let parseManager;
 
 // Custom function for building buttons
-let ButtonHlpr = function(btn){
+const ButtonHlpr = function(btn){
     let button = jQuery(btn);
     this.loading = function(){
         button.html(button.data('loading-text'));
@@ -232,7 +232,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return true;
         };
 
-
+        /**
+         * 
+         * @param {*} measureRow 
+         * @returns 
+         */
         parseManager.getDateFromData = function(measureRow){
             return moment(new Date(measureRow['timestamp'])).format('L - LT')
         };
@@ -278,9 +282,10 @@ document.addEventListener('DOMContentLoaded', function() {
             parseManager._startDate = startDate;
             parseManager._endDate = endDate;
 
-            parseManager.flushChart(true, function(){
-                parseManager.parse();
-            });
+            // parseManager.flushChart(true, function(){
+            //     parseManager.parse();
+            // });
+            refreshData();
         };
 
 
